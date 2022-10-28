@@ -12,6 +12,8 @@ import { MessagesService } from './messages.service';
 export class MessagesController {
   messagesService: MessagesService;
   constructor() {
+    //Service is creating its own dependencies
+    //DON'T DO THIS ON REAL APPS
     this.messagesService = new MessagesService();
   }
 
