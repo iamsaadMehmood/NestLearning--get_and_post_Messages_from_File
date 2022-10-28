@@ -10,12 +10,7 @@ import { CreateMessageDto } from './dtos/create-message.dto';
 import { MessagesService } from './messages.service';
 @Controller('/messages')
 export class MessagesController {
-  messagesService: MessagesService;
-  constructor() {
-    //Service is creating its own dependencies
-    //DON'T DO THIS ON REAL APPS
-    this.messagesService = new MessagesService();
-  }
+  constructor(public messagesService: MessagesService) {}
 
   @Get()
   getAllMessages() {
